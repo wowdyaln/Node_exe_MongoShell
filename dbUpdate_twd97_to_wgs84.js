@@ -1,5 +1,11 @@
+// ! set database ; set collection
+let database = "local"
+let collection = "tw_mrt"
+// !
+
+
 // * set database.
-db = db.getSiblingDB('local');
+db = db.getSiblingDB(database);
 
 // * coordinate converter.
 // https://kuro.tw/posts/2015/06/11/js-note-twd97-convert-to-longitude-and-latitude/
@@ -66,7 +72,7 @@ function updateFromTwd97ToWGS84(doc) {
   let coordinates = twd97_to_wgs84(map[0], map[1])  // convert coordinate format from TWD97 to WGS84
   let lonLat = [coordinates[1], coordinates[0]]     // coordinates: [ Lon, Lat ]
 
-  db.tw_railway_station.update(
+  db[collection].update(
     { "_id": doc._id }, // value 要是 ObjectId("XxxxXXxxxxx")，不能只是傳入 id string.
     {
       $set: {
@@ -79,7 +85,7 @@ function updateFromTwd97ToWGS84(doc) {
 }
 
 // * excute code to operate MongoDB database.
-// db.tw_railway_station.find().forEach(doc => printjson(doc) );
-// db.tw_railway_station.find().forEach(doc => convertPrint(doc) );
-db.tw_railway_station.find().forEach(document => updateFromTwd97ToWGS84(document));
+// db.tw_mrt.find().forEach(doc => printjson(doc) );
+// db.tw_mrt.find().forEach(doc => convertPrint(doc) );
+db[collection].find().forEach(document => updateFromTwd97ToWGS84(document));
 

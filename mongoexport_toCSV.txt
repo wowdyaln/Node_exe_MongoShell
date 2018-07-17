@@ -1,0 +1,36 @@
+mongoexport -d local -c twAttractions --type=csv --out google.csv --fields "properties.MARKNAME2,properties.ADDRESS,properties.TEL,geometry.coordinates"
+
+mongoexport -d local -c tw_airport --type=csv --out google.csv --fields "properties.MARKNAME2,properties.TEL,geometry.coordinates"
+
+mongoexport -d local -c tw_railway_station --type=csv --out google.csv --fields "properties.MARKNAME2,properties.ADDRESS,properties.TEL,geometry.coordinates"
+
+mongoexport -d local -c china_city --type=csv --out google.csv --fields "nameTC,parentTC,nameENG,lng,lat"
+
+mongoexport -d local -c ubike --type=csv --out google.csv --fields "sna,sarea,ar,lng,lat"
+
+mongoexport -d local -c coffee_taipei --type=csv --out google.csv --fields "name,latitude,longitude,url,address"
+mongoexport -d local -c coffee_taichung --type=csv --out google.csv --fields "name,latitude,longitude,url,address"
+
+mongoexport -d local -c tw_lrt --type=csv --out google.csv --fields "properties.MARKNAME1,geometry.coordinates"
+
+mongoexport -d local -c tw_hsr --type=csv --out google.csv --fields "properties.MARKNAME2,geometry.coordinates"
+mongoexport -d local -c tw_mrt --type=csv --out google.csv --fields "properties.MARKNAME2,geometry.coordinates"
+
+mongoexport -d local -c tw_waterQuality --type=csv --out google.csv --fields "code_name,longitude,latitude"
+
+mongoexport -d local -c taipei_parking --type=csv --out google.csv --fields "name,summary,tel,payex,serviceTime,totalcar,totalmotor,totalbike,totalbus,wgs84x,wgs84y"
+
+mongoexport -d local -c taipei_fuel --type=csv --out google.csv --fields "S_NAME,SUPPLIER,PHONE,DUTY_TIME,HAVEOIL,HAVESELF,HAVEGAS,wgs84x,wgs84y"
+
+mongoexport -d local -c IA_CrossDikeStair --type=csv --out google.csv --fields "geometry.coordinates"
+
+mongoexport -d local -c 大屯火山地區溫泉採樣分析點位資料 --type=csv --out google.csv --fields "coordinates,採樣點"
+
+mongoexport -d local -c 大屯火山活動監測_鑽探點位_地溫井 --type=csv --out google.csv --fields "coordinates,測站"
+
+mongoexport -d local -c 大屯火山活動監測_鑽探點位_鑽探點 --type=csv --out google.csv --fields "coordinates,井名,年度,深度(m)"
+
+mongoexport -d local -c taipei_CCTV --type=csv --out google.csv --fields "geometry.coordinates,properties.ID"
+
+mongoexport -d local -c 臺北捷運轉乘停車場 --type=csv --out google.csv --fields "geometry.coordinates,properties.停車場名稱"
+　
