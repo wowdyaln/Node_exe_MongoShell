@@ -1,0 +1,2 @@
+
+mongoimport -d local -c tw_railway_station --jsonArray < ../../tw_railway_all.json
